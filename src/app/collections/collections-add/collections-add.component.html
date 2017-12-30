@@ -1,0 +1,21 @@
+<div class="collections-add">
+  <div class="collections-add__title">
+    <span>
+      <a routerLink=".." class="collections-add__link collections-add__link--left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+      </a>
+    </span>
+    Adicionar nova coleção
+  </div>
+  <div class="collections-add__body">
+    Nome: <input type="text" [(ngModel)]="name"/>
+  </div>
+  <div class="collections__footer">
+    <span
+      class="collections-add__link"
+      (click)="addCollection()">
+      <i class="fa fa-plus" aria-hidden="true"></i>
+      Adicionar
+    </span>
+  </div>
+</div>

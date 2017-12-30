@@ -1,0 +1,33 @@
+<div class="collections-info" *ngIf="!collection">
+  Nenhuma informação para exibir
+</div>
+<div class="collections-info" *ngIf="collection">
+  <div class="collections-info__title">
+    <span>
+      <a routerLink=".." class="collections-info__link collections-info__link--left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+      </a>
+    </span>
+    Lista de discos da coleção <strong>{{collection.name}}</strong>
+  </div>
+  <div
+    class="collections-info__item"
+    *ngFor="let disc of discs">
+      <a [routerLink]="['/discs', disc.id]" class="collections-info__link">
+        <i class="fa fa-play-circle" aria-hidden="true"></i> {{disc.name}}
+      </a>
+      -
+      <a class="collections-info__link" (click)="deleteDisc(disc.id)">
+        <i class="fa fa-times" aria-hidden="true"></i>
+      </a>
+  </div>
+  <div class="collections__footer">
+    <a
+      routerLink="/discs/add"
+      class="collections-info__link">
+      <i class="fa fa-plus" aria-hidden="true"></i>
+      Adicionar disco
+    </a>
+  </div>
+</div>
+  

@@ -1,0 +1,27 @@
+<div class="collections">
+    <div class="collections__title">
+      Lista de coleções
+    </div>
+    <div
+      class="collections__item"
+      *ngFor="let collection of collections">
+        <a
+          [routerLink]="['/collections', collection.id]"
+          class="collections__link">
+          <i class="fa fa-bookmark" aria-hidden="true"></i> {{collection.name}}
+        </a>
+        -
+        <a class="collections__link" (click)="deleteCollection(collection.id)">
+          <i class="fa fa-times" aria-hidden="true"></i>
+        </a>
+    </div>
+    <div class="collections__footer">
+      <a
+        routerLink="/collections/add"
+        class="collections__link">
+        <i class="fa fa-plus" aria-hidden="true"></i>
+        Adicionar coleção
+      </a>
+    </div>
+  </div>
+  

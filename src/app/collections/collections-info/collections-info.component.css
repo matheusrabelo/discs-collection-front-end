@@ -1,0 +1,35 @@
+.collections-info {
+    font-size: 1rem;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.collections-info__title {
+    font-size: 1.2rem;
+    padding-bottom: 1rem;
+}
+
+.collections-info__item {
+    cursor: pointer;
+}
+
+.collections__footer {
+    padding-top: 1rem;
+}
+
+.collections-info__link:any-link {
+    text-decoration: none;
+    color: black;
+}
+
+.collections-info__link--left {
+    padding-right: 0.5rem;
+}
+
+@media (min-width: 600px) {
+    .collections-info__item {
+        text-align: left;
+        padding-left: 3rem;
+    }
+}
