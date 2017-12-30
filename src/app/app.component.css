@@ -1,0 +1,9 @@
+.app-wrapper {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #E0E4CC;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
