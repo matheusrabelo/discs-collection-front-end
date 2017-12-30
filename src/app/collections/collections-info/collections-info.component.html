@@ -10,9 +10,12 @@
     </span>
     Lista de discos da coleção <strong>{{collection.name}}</strong>
   </div>
+  <div class="collections-info__filter">
+    <input type="text" placeholder="filtrar por..." [(ngModel)]="filter" (input)="updateFilteredDiscs()"/>
+  </div>
   <div
     class="collections-info__item"
-    *ngFor="let disc of discs">
+    *ngFor="let disc of filteredDiscs">
       <a [routerLink]="['/discs', disc.id]" class="collections-info__link">
         <i class="fa fa-play-circle" aria-hidden="true"></i> {{disc.name}}
       </a>

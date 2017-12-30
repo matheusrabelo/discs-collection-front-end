@@ -14,7 +14,9 @@ import { Collection } from '../../collection';
 export class CollectionsInfoComponent implements OnInit {
   id: number;
   discs: Disc[];
+  filteredDiscs: Disc[];
   collection: Collection;
+  filter: string;
 
   constructor(
     private route: ActivatedRoute,
@@ -26,11 +28,27 @@ export class CollectionsInfoComponent implements OnInit {
       .then(() => (this.loadInfo()));
   }
 
+  updateFilteredDiscs() {
+    if (this.filter) {
+      this.filteredDiscs = this.discs.filter((disc: Disc) => {
+        const filter = this.filter.toLowerCase();
+        const name = disc.name.toLowerCase();
+        return name.includes(filter);
+      });
+    } else {
+      this.filteredDiscs = [...this.discs];
+    }
+  }
+
   loadInfo() {
     this.apiService.getCollection(this.id)
       .then((collection) => (this.collection = collection));
     this.apiService.getCollectionDiscs(this.id)
-      .then((discs) => (this.discs = discs));
+      .then((discs) => {
+        this.filter = '';
+        this.discs = discs;
+        this.filteredDiscs = discs;
+      });
   }
 
   ngOnInit() {

@@ -10,6 +10,10 @@
     padding-bottom: 1rem;
 }
 
+.collections-info__filter {
+    padding-bottom: 1rem;
+}
+
 .collections-info__item {
     cursor: pointer;
 }
