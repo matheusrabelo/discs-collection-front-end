@@ -1,0 +1,30 @@
+<div class="disc" *ngIf="!disc">
+  Nenhuma informação para exibir
+</div>
+<div class="disc" *ngIf="disc">
+  <div class="disc__title">
+    <span>
+      <a routerLink="/collections" class="disc__link disc__link--left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+      </a>
+    </span>
+    Exibindo informações do disco <strong>{{disc.name}}</strong>
+  </div>
+  <div class="disc__body">
+    <div class="disc__body-field">
+      Nome: <input type="text" [(ngModel)]="disc.name"/>
+    </div>
+    <div class="disc__body-field">
+      Id da coleção: <input type="text" [(ngModel)]="disc.collection_id"/>
+    </div>
+  </div>
+  <div class="disc__footer">
+    <span
+      (click)="saveDisc()"
+      class="disc__link">
+      <i class="fa fa-plus" aria-hidden="true"></i>
+      Salvar informações
+    </span>
+  </div>
+</div>
+  

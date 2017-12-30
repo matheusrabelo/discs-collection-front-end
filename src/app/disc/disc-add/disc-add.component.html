@@ -1,0 +1,26 @@
+<div class="disc-add" *ngIf="!collection">
+    Nenhuma informação para exibir
+</div>
+<div class="disc-add" *ngIf="collection">
+  <div class="disc-add__title">
+    <span>
+      <a [routerLink]="['/collections', collectionId]" class="disc-add__link disc-add__link--left">
+        <i class="fa fa-chevron-left" aria-hidden="true"></i>
+      </a>
+    </span>
+    Adicionar disco na coleção <strong>{{collection.name}}</strong>
+  </div>
+  <div class="disc-add__body">
+    <div class="disc-add__body-field">
+      Nome: <input type="text" [(ngModel)]="name"/>
+    </div>
+  </div>
+  <div class="disc-add__footer">
+    <span
+      (click)="addDisc()"
+      class="disc-add__link">
+      <i class="fa fa-plus" aria-hidden="true"></i>
+      Adicionar disco
+    </span>
+  </div>
+</div>

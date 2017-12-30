@@ -41,10 +41,16 @@ export class ApiService {
       .catch(() => (console.log('Erro ao obter disco')));
   }
 
-  createDisc(name, collectionId) {
-    return this.api.post(`/discs`, { name, collectionId })
+  createDisc(name, collection_id) {
+    return this.api.post(`/discs`, { name, collection_id })
       .then(result => (result.data))
       .catch(() => (console.log('Erro ao criar disco')));
+  }
+
+  updateDisc(id, name, collection_id) {
+    return this.api.put(`/discs/${id}`, { name, collection_id })
+      .then(result => (result.data))
+      .catch(() => (console.log('Erro ao atualizar disco')));
   }
 
   deleteDisc(id) {

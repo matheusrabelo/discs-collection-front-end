@@ -23,7 +23,7 @@
   </div>
   <div class="collections__footer">
     <a
-      routerLink="/discs/add"
+      [routerLink]="['/discs/add', id]"
       class="collections-info__link">
       <i class="fa fa-plus" aria-hidden="true"></i>
       Adicionar disco
